@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>GTA 6 Blocker</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header class="top">
+    <img src="../icons/icon48.png" alt="" width="28" height="28">
+    <div class="brand">
+      <h1>GTA 6 Blocker</h1>
+      <p id="status" class="muted">Active on YouTube</p>
+    </div>
+    <label class="switch" title="Turn blocking on or off">
+      <input type="checkbox" id="enabled" aria-label="Blocking on or off">
+      <span class="slider" aria-hidden="true"></span>
+    </label>
+  </header>
+
+  <section class="stat">
+    <span id="count" class="big">0</span>
+    <span class="muted">videos blocked this session</span>
+  </section>
+
+  <section class="card">
+    <h2>Shorts</h2>
+    <label class="radio"><input type="radio" name="shortsMode" value="overlay"> Show the blocked overlay</label>
+    <label class="radio"><input type="radio" name="shortsMode" value="skip"> Skip to the next Short automatically</label>
+  </section>
+
+  <section class="card">
+    <h2>Keywords</h2>
+    <label class="check">
+      <input type="checkbox" id="useBuiltin">
+      <span>Use the built-in list (<span id="builtinCount">0</span> terms)</span>
+    </label>
+
+    <label class="field" for="customKeywords">Extra words to block <span class="muted">(one per line)</span></label>
+    <textarea id="customKeywords" rows="3" spellcheck="false" placeholder="e.g. Rockstar trailer"></textarea>
+
+    <label class="field" for="allowKeywords">Never block videos containing <span class="muted">(one per line)</span></label>
+    <textarea id="allowKeywords" rows="2" spellcheck="false" placeholder="e.g. GTA 6 parody"></textarea>
+
+    <label class="field" for="allowChannels">Never block these channels <span class="muted">(one per line)</span></label>
+    <textarea id="allowChannels" rows="2" spellcheck="false" placeholder="e.g. My Favorite Channel"></textarea>
+  </section>
+
+  <details class="card">
+    <summary>Advanced</summary>
+    <label class="check">
+      <input type="checkbox" id="debug">
+      <span>Debug mode: log detection times to the YouTube tab's console (F12)</span>
+    </label>
+  </details>
+
+  <footer>
+    <span id="saved" class="muted" aria-live="polite"></span>
+    <span class="muted">Runs locally. No tracking.</span>
+  </footer>
+
+  <script src="../src/keywords.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

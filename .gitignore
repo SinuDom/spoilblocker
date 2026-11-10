@@ -1,0 +1,12 @@
+# OS / editor files
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+
+# Packed builds (the repo itself is the extension; nothing needs building)
+*.crx
+*.pem
+*.zip
